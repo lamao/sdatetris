@@ -1,0 +1,33 @@
+/*
+ * $Id: button.bss,v 1.1 2007/05/08 22:14:15 vivaldi Exp $
+ *
+ * Default BUI style sheet
+ */
+
+button {
+  background: image "rsrc/textures/button_up.png" framexy;
+  padding: 3 5;
+  font: "Dialog" bold 24;
+  text-align: center;
+  text-effect: outline;
+  effect-color: #442288;
+}
+
+button:hover {
+  color: #FF00FF;
+}
+
+button:disabled {
+  background: image "rsrc/textures/button_disabled.png" framexy;
+}
+
+button:down {
+  background: image "rsrc/textures/button_down.png" framexy;
+  color: #FF00FF;
+  padding: 4 6 2 4;
+}
+
+button:selected {
+  background: image "rsrc/textures/button_down.png" framexy;
+  padding: 4 6 2 4;
+}

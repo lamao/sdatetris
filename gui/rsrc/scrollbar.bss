@@ -1,0 +1,40 @@
+/*
+
+ $Id: scrollbar.bss,v 1.1 2007/05/08 22:14:15 vivaldi Exp $
+
+ Default BUI style sheet
+*/
+
+scrollbar_hthumb {
+  background: solid #FFFFFF;
+}
+
+scrollbar_vthumb {
+  background: solid #FFFFFF;
+}
+
+scrollbar_hwell {
+  background: image "rsrc/textures/button_up.png" framexy;
+  padding: 3;
+}
+
+scrollbar_vwell {
+  background: image "rsrc/textures/button_up.png" framexy;
+  padding: 3;
+}
+
+scrollbar_hless {
+  icon: image "rsrc/textures/scroll_left.png";
+}
+
+scrollbar_vless {
+  icon: image "rsrc/textures/scroll_up.png";
+}
+
+scrollbar_hmore {
+  icon: image "rsrc/textures/scroll_right.png";
+}
+
+scrollbar_vmore {
+  icon: image "rsrc/textures/scroll_down.png";
+}

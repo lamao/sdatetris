@@ -1,0 +1,161 @@
+//this is the new stylesheet we're going to use
+// it starts and ends here
+
+root {
+  color: #FFFFFF;
+  font: "Snap ITC" plain 16;
+}
+
+root:disabled {
+  color: #BBBBBB;
+}
+
+window {
+  border: 1 solid #FFFFFF;
+  background: image "data/textures/background.png" tilexy;
+}
+
+decoratedwindow {
+  border: 1 solid #FFFFFF;
+}
+
+tooltip_window {
+  background: solid #FFFFFF88;  // white
+  border: 2 solid #000000;
+  padding: 5;
+}
+
+tooltip_label {
+  color: #000000;
+  font: "Dialog" plain 16;
+}
+
+label {
+    font: "Snap ITC" bold 16;
+    color: #663300;
+}
+
+label_decorated {
+    parent: label;
+    background: image "data/textures/label.png";
+    text-align: center;
+    color: #FFFF88;
+}
+
+menuitem:hover {
+  color: #000000;
+  background: solid #FFFFFF88;
+}
+
+button:hover {
+  text-effect: outline;
+  effect-color: #000000;
+}
+
+button {
+  background: image "data/textures/button.png" framexy;
+  padding: 3 5;
+  font: "Snap ITC" bold 24;
+  color: #FFFF88;
+  text-align: center;
+}
+
+button:disabled {
+  background: image "data/textures/button_disabled.png" framexy;
+  color: #888844;
+}
+
+button:down {
+  background: image "data/textures/button_down.png" framexy;
+//  color: #FF00FF;
+  padding: 4 6 2 4;
+}
+
+textfield {
+  background: solid #11111188;
+  padding: 5 5;
+}
+
+textarea {
+  background: solid #11111188;
+  padding: 5;
+}
+
+checkbox {
+  color: #663300;
+  icon: blank 7 7;
+  icon: image "data/textures/checkbox_deselected.png" centerxy;
+}
+
+checkbox:selected {
+  icon: image "data/textures/checkbox.png" centerxy;
+}
+
+//checkbox:disselected {
+//  icon: image "data/textures/checkbox_deselected.png" centerxy;
+//}              
+
+window_title {
+  padding: 3 5;
+  font: "Snap ITC" bold 16;
+  text-align: center;
+}
+
+
+list {
+    background: solid #AAAAAAAA;
+    border: 2 solid #555555;
+}
+
+list_entry {
+    parent: label;
+}
+
+// new for the Bui extensions by timo -- 30Apr07
+titlebar {
+  background: solid #AA7700;
+  border: 1 solid #FFFFFF;
+  padding: 3 5;
+}
+
+dialogbutton{
+    parent: button;
+}
+
+dialogbutton:hover {
+  text-effect: outline;
+  effect-color: #000000;
+
+}
+
+dialogbutton:disabled {
+  background: image "data/textures/button_disabled.png" framexy;
+  color: #888844;
+}
+
+dialogbutton:down {
+  background: image "data/textures/button_down.png" framexy;
+}
+
+
+titlemessage {
+    font: "Snap ITC" bold 16;
+    color: #663300;
+    text-align: left;
+}
+
+message {
+    font: "Snap ITC" bold 16;
+    color: #663300;
+    text-align: left;
+}
+
+greymessagebg {
+    font: "Snap ITC" bold 12;
+    padding: 10 20;
+    text-align: left;
+}
+
+pausebackground {
+    background: solid #00000088;
+}

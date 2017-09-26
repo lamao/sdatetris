@@ -1,0 +1,9 @@
+/*
+ * $Id: combobox.bss,v 1.1 2007/05/08 22:14:15 vivaldi Exp $
+ *
+ * Default BUI style sheet
+ */
+combobox {
+  background: image "rsrc/textures/button_up.png" framexy;
+  padding: 3 5;
+}

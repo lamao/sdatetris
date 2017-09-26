@@ -1,0 +1,35 @@
+/*
+
+ $Id: messages.bss,v 1.1 2007/05/08 22:14:15 vivaldi Exp $
+
+ Default BUI style sheet
+*/
+
+titlemessage {
+    font: "Arial" bold 12;
+    color: #FFFFFF;
+    padding: 5 5;
+    text-align: left;
+}
+
+statusmessage {
+    font: "Arial" bold 10;
+    color: #FFFFFF;
+    padding: 5 5;
+    text-align: left;
+}
+
+message {
+    font: "Arial" bold 12;
+    color: #FFFFFF;
+    padding: 10 40;
+    text-align: left;
+}
+
+greymessagebg {
+    font: "Arial" bold 12;
+    color: #FFFFFF;
+    background: solid #999999;
+    padding: 10 40;
+    text-align: left;
+}

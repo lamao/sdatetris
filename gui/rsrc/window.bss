@@ -1,0 +1,20 @@
+/*
+
+ $Id: window.bss,v 1.1 2007/05/08 22:14:15 vivaldi Exp $
+
+ Default BUI style sheet
+*/
+
+window {
+  border: 4 solid #FFFFFF;
+}
+
+decoratedwindow {
+  border: 1 solid #FFFFFF;
+}
+
+window_title {
+  padding: 3 5;
+  font: "Arial" bold 20;
+  text-align: center;
+}

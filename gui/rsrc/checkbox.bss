@@ -1,0 +1,16 @@
+/*
+ * $Id: checkbox.bss,v 1.1 2007/05/08 22:14:15 vivaldi Exp $
+ *
+ * Default BUI style sheet
+ */
+checkbox {
+  icon: blank 7 7;
+}
+
+checkbox:selected {
+  icon: image "rsrc/textures/checkbox.png" centery;
+}
+
+checkbox:disselected {
+  icon: image "rsrc/textures/checkbox.png" centery;
+}

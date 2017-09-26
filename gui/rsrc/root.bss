@@ -1,0 +1,15 @@
+
+/*
+ $Id: root.bss,v 1.1 2007/05/08 22:14:15 vivaldi Exp $
+
+ Default BUI style sheet
+*/
+
+root {
+  color: #FFFFFF;
+  font: "Dialog" plain 16;
+}
+
+root:disabled {
+  color: #BBBBBB;
+}

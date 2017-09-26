@@ -1,0 +1,202 @@
+<project name="sdatetris" basedir="." default="run.windows">
+<!--=============================== Properties ==============================-->
+	
+	<!-- ***************** SETTINGS *********************** -->
+	<property name="project.build.internal" value="false" />
+	<property name="build.type" value="release" />
+	<property name="project.build" value="6" />
+	<!-- ************************************************** -->
+	
+	<property name="project.name" value="sdatetris" />
+	
+	<property name="sourceDir" value="${basedir}/src"/>
+	<property name="libDir" value="${basedir}/lib"/>
+	<property name="native.dir" value="${basedir}/native" />
+	<property name="extDataDir" value="${basedir}/data"/>
+	<property name="launchers.dir" value="${basedir}/launchers" />
+	<property name="gui.dir" value="${basedir}/gui" />
+	
+	<property name="readme.file" value="${basedir}/README.txt" />
+	<property name="qatasks.file" value="${basedir}/QATASKS.txt" />
+	<property name="changellog.dev.file" value="${basedir}/DEV_CHANGELOG.txt" />
+	<property name="changellog.release.file" value="${basedir}/CHANGELOG.txt" />
+	
+	<property name="suffics.windows" value="win" />
+	<property name="suffics.linux32" value="lin32" />
+	<property name="suffics.linux64" value="lin64" />
+	<property name="suffics.macosx" value="mac" /> 
+	
+	<property name="launcher.windows" value="launcher.bat"/>
+	<property name="launcher.linux32" value="launcher.sh"/>
+	<property name="launcher.linux64" value="launcher.sh"/>
+	<property name="launcher.macosx" value="launcher.sh"/>
+
+	<property name="build.dir" value="${basedir}/build" />
+	<property name="build.classes.dir" value="${build.dir}/classes" />
+	
+	<property name="build.jar.windows.dir" value="${build.dir}/jar/${suffics.windows}" />
+	<property name="build.jar.linux32.dir" value="${build.dir}/jar/${suffics.linux32}" />
+	<property name="build.jar.linux64.dir" value="${build.dir}/jar/${suffics.linux64}" />
+	<property name="build.jar.macosx.dir" value="${build.dir}/jar/${suffics.macosx}" />
+	
+	
+
+<!--============================== Classpathes ==============================-->
+	<path id="compile.classpath">
+	    <fileset dir="${libDir}">
+	      <include name="**/*.jar" />
+	      <exclude name="junit" />
+	    </fileset>
+	</path>
+	
+<!--============================== Conditions ===============================-->
+
+	<condition property="build.internal.condition">
+		<equals arg1="${project.build.internal}" arg2="true"/>
+	</condition>
+	
+	<condition property="changelog.file" value="${changellog.dev.file}"
+			else="${changellog.release.file}">
+		<equals arg1="${project.build.internal}" arg2="true"/>
+	</condition>
+	
+<!--=============================== Targets ================================ -->
+	
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+	</target>
+			
+	<target name="prepare" depends="clean">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.classes.dir}" />
+		<mkdir dir="${build.dir}/gui" />
+		<mkdir dir="${build.jar.windows.dir}" />
+		<mkdir dir="${build.jar.linux32.dir}" />
+		<mkdir dir="${build.jar.linux64.dir}" />
+		<mkdir dir="${build.jar.macosx.dir}" />
+	</target>
+	
+	<target name="compile" depends="prepare">
+		<javac srcdir="${sourceDir}" destdir="${build.classes.dir}" 
+			classpathref="compile.classpath" excludes="${sourceDir}/junit"/>
+		<!--<copy toDir="${build.classes.dir}/data" >
+			<fileset dir="${sourceDir}/data" />
+		</copy>
+		<copy toDir="${build.classes.dir}/rsrc" >
+			<fileset dir="${sourceDir}/rsrc" />
+		</copy>
+		-->
+	</target>
+	
+<!--======================== Create JARs & ZIPs =============================-->
+	<target name="copy.optional" if="build.internal.condition">
+		<copy todir="${build.jar.dir.param}" file="${qatasks.file}" />
+	</target>
+	
+	<target name="pack.gui">
+		<copy todir="${build.dir}/gui" >
+			<fileset dir="${gui.dir}"/>
+		</copy>
+		<zip basedir="${build.dir}/gui" destfile="${build.dir}/gui/gui.zip" />
+	</target>
+	
+	<target name="jar.create">
+		
+		<jar destfile="${build.jar.dir.param}/${project.name}.jar" 
+				basedir="${build.classes.dir}" manifest="${basedir}/MANIFEST.MF"/>
+		
+		<copy todir="${build.jar.dir.param}/data" >
+			<fileset dir="${extDataDir}" />
+		</copy>
+		<copy todir="${build.jar.dir.param}/data" file="${build.dir}/gui/gui.zip" />
+		<copy todir="${build.jar.dir.param}/lib">
+			<fileset dir="${libDir}">
+				<exclude name="**/junit/**"/>
+			</fileset>
+		</copy>
+		<copy todir="${build.jar.dir.param}/native" >
+			<fileset dir="${native.dir}/${suffics.param}" />
+		</copy>
+		<copy todir="${build.jar.dir.param}" 
+				file="${launchers.dir}/${suffics.param}/${launcher.param}" />
+		<copy todir="${build.jar.dir.param}" file="${readme.file}" />
+		<copy tofile="${build.jar.dir.param}/CHANGELOG.txt" file="${changelog.file}" />
+		<antcall target="copy.optional" />
+	</target>
+	
+	
+	<target name="jar.create.windows">
+		<antcall target="jar.create">
+			<param name="build.jar.dir.param" value="${build.jar.windows.dir}" />
+			<param name="suffics.param" value="${suffics.windows}" />
+			<param name="launcher.param" value="${launcher.windows}" />
+		</antcall>
+	</target>
+	
+	<target name="jar.create.linux32">
+		<antcall target="jar.create">
+			<param name="build.jar.dir.param" value="${build.jar.linux32.dir}" />
+			<param name="suffics.param" value="${suffics.linux32}" />
+			<param name="launcher.param" value="${launcher.linux32}" />
+		</antcall>
+	</target>
+	
+	<target name="jar.create.linux64">
+		<antcall target="jar.create">
+			<param name="build.jar.dir.param" value="${build.jar.linux64.dir}" />
+			<param name="suffics.param" value="${suffics.linux64}" />
+		<param name="launcher.param" value="${launcher.linux64}" />
+		</antcall>
+	</target>
+	
+	<target name="jar.create.macosx">
+		<antcall target="jar.create">
+			<param name="build.jar.dir.param" value="${build.jar.macosx.dir}" />
+			<param name="suffics.param" value="${suffics.macosx}" />
+			<param name="launcher.param" value="${launcher.macosx}" />
+		</antcall>
+	</target>
+	
+	<target name="zip.create">
+		<antcall target="compile" />
+		<antcall target="pack.gui" />
+		<antcall target="jar.create.windows" />
+		<antcall target="jar.create.linux32" />
+		<antcall target="jar.create.linux64" />
+		<antcall target="jar.create.macosx" />
+			
+		<mkdir dir="${build.dir}/zip" />
+		<zip destfile="${build.dir}/zip/${project.name}_b${project.build}${build.type}_${suffics.windows}.zip" 
+			basedir="${build.jar.windows.dir}" />
+		<zip destfile="${build.dir}/zip/${project.name}_b${project.build}${build.type}_${suffics.linux32}.zip" 
+			basedir="${build.jar.linux32.dir}" />
+		<zip destfile="${build.dir}/zip/${project.name}_b${project.build}${build.type}_${suffics.linux64}.zip" 
+			basedir="${build.jar.linux64.dir}" />
+		<zip destfile="${build.dir}/zip/${project.name}_b${project.build}${build.type}_${suffics.macosx}.zip" 
+			basedir="${build.jar.macosx.dir}" />
+	</target>
+	
+	
+	
+<!--================================== RUN ==================================-->	
+	<target name="run.windows">
+		<exec executable="${build.jar.windows.dir}/${launcher.windows}"
+			dir="${build.jar.windows.dir}"/>
+	</target>
+		
+	<target name="run.linux32">
+		<exec executable="${build.jar.linux32.dir}/${launcher.linux32}"
+			dir="${build.jar.linux32.dir}"/>
+	</target>
+	
+	<target name="run.linux64">
+		<exec executable="${build.jar.linux64.dir}/${launcher.linux64}"
+			dir="${build.jar.linux64.dir}"/>
+	</target>
+	
+	<target name="run.macosx">
+		<exec executable="${build.jar.macosx.dir}/${launcher.macosx}"
+			dir="${build.jar.macosx.dir}"/>
+	</target>
+	
+</project>

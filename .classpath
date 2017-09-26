@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="junit"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/jme/jme.jar" sourcepath="D:/Documents/project/jme/jME2_0_1-Stable.zip"/>
+	<classpathentry kind="lib" path="lib/jme/jme-gamestates.jar" sourcepath="D:/Documents/project/jme/jME2_0_1-Stable.zip"/>
+	<classpathentry kind="lib" path="lib/lwjgl/lwjgl.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="sdatetris/native/win"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/lwjgl/lwjgl_util.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme-audio.jar"/>
+	<classpathentry kind="lib" path="lib/junit/junit-4.7.jar" sourcepath="lib/junit/junit-4.7-src.jar"/>
+	<classpathentry kind="lib" path="lib/gbui/jme-bui.jar" sourcepath="libsource/jme-bui-src2a.jar"/>
+	<classpathentry kind="lib" path="lib/gbui/mouseManager_r1_jme2.jar"/>
+	<classpathentry kind="lib" path="lib/jorbis/jorbis-0.0.17.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme-font.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme-scene.jar"/>
+	<classpathentry kind="lib" path="lib/jme/jme-effects.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

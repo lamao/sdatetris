@@ -1,0 +1,35 @@
+/*
+
+ $Id: titlebutton.bss,v 1.1 2007/05/08 22:14:15 vivaldi Exp $
+
+ Default BUI style sheet
+*/
+
+titlebutton {
+  background: solid #000088;
+  border: 1 solid #FFFFFF;
+  padding: 3 5;
+  font: "Arial" bold 12;
+  text-align: center;
+}
+
+titlebutton:hover {
+  /*color: #cee453ff;*/
+  /*border: 1 solid #cee453ff;*/
+  background: solid #2a2a90ff;
+}
+
+titlebutton:disabled {
+  color: #999999;
+  border: 1 solid #999999;
+}
+
+titlebutton:down {
+  /*color: #edfe8fff;*/
+  /*border: 1 solid #edfe8fff;*/
+  padding: 4 6 2 4;
+}
+
+titlebutton:selected {
+  padding: 4 6 2 4;
+}

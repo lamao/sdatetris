@@ -1,0 +1,67 @@
+--------------------------------------------------------------------------------
+-----------------------------   S.D.A. Tetris   --------------------------------
+--------------------------------------------------------------------------------
+
+                          Copyright (C) 2010 S.D.A. Tetris
+                      WWW: http://code.google.com/p/sdatetris
+
+                            ----------------------
+                                 INTRODUCTION
+                            ----------------------
+ This file contatins main changes across builds (also called change log). This
+file reflects changes for every internal build used for develping puproses.
+
+                            ----------------------
+                                 C H A N G E S
+                            ----------------------
+Build #6
+--------
+[-] Project was cleared from unused libraries.
+[*] Level is changed when back side of field is shown.
+[*] GUI was moved out from main jar into data/gui.zip.
+
+
+Build #5
+--------
+[+] HUDs can be disabled.
+[f] Issues ##4,5,6.
+[+] Loading screen.
+[+] FPS counter.
+[+] Game console and commands 'echo', 'wired', 'level', 'score'.
+[+] Glow between levels.
+[+] Sounds between levels, for game over and for victory.
+
+
+Build #4
+--------
+[*] GUI style.
+[+] Animation for tetramino placing and line completion.
+[+] Field rotation between levels.
+[*] Font was changed to 'Snap ITC'.
+[+] Bilinear filtering for tetramino.
+[*] Resource manager was completely changed.
+
+Build #3
+--------
+[f] #Issues ##2,3.
+[+] Speed changing
+[+] 'Logo', 'Options', 'Credits', 'Controls', 'Records' screens were 
+    implemented.
+[+] Input dialog for saving user score.
+
+Build #2
+--------
+ 
+[f] Issues ##1,2.
+[+] 'Info' HUD 'Next Tetramino' HUD. 
+[+] Level increasing scheme.
+[+] Score multipliers for completed lines.
+[+] Some in-game sounds.
+[*] Improved control feedback. 
+
+Build #1
+--------
+
+[+] Stubs for logo, menu, credits, records.
+[+] Basic functionality of game.
+

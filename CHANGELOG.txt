@@ -1,0 +1,27 @@
+--------------------------------------------------------------------------------
+-----------------------------   S.D.A. Tetris   --------------------------------
+--------------------------------------------------------------------------------
+
+                          Copyright (C) 2010 S.D.A. Tetris
+                      WWW: http://code.google.com/p/sdatetris
+
+                            ----------------------
+                                 INTRODUCTION
+                            ----------------------
+ This file contatins main changes across releases (also called change log). This
+file reflects changes for every public release.
+
+                            ----------------------
+                                 C H A N G E S
+                            ----------------------
+Build #6
+--------
+[-] Project was cleared from unused libraries.
+[*] Level is changed when back side of field is shown.
+[*] GUI was moved out from main jar into data/gui.zip.
+
+
+Build #5
+--------
+- Beta version.
+

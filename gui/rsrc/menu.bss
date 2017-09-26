@@ -1,0 +1,14 @@
+/*
+ $Id: menu.bss,v 1.1 2007/05/08 22:14:15 vivaldi Exp $
+
+ Default BUI style sheet
+*/
+
+menuitem {
+  padding: 0 2;
+}
+
+menuitem:hover {
+  color: #000000;
+  background: solid #FFFFFF88;
+}

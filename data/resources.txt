@@ -1,0 +1,29 @@
+# This is the file, where denoted all game resources (e.g. textures, sounds).
+# 
+# Lines started with '#' are comments and loader ingnores them.
+#
+# Eachline has format
+#
+#   type="Texture/Sound/Font" label="Some string name" path="path to resource"
+#   type="Texture"  label="MainBox" path="data/mainbox.png"
+#
+
+type="texture" label="monkeyTX" path="data/textures/monkey.png"
+type="texture" label="logoTX" path="data/textures/logo.png"
+type="texture" label="tetraminoTX" path="data/textures/tetramino.jpg" filtering="bilinear"
+type="texture" label="mainBoxTX" path="data/textures/box.jpg"
+type="texture" label="mainBoxBgTX" path="data/textures/box_bg.jpg"
+type="texture" label="particlesTX" path="data/textures/flaresmall.jpg"
+
+type="sound" label="placedSnd" path="data/sounds/placed.ogg"
+type="sound" label="lineSnd" path="data/sounds/line.ogg"
+type="sound" label="musicSnd" path="data/sounds/music.ogg" stream="true" loop="true"
+type="sound" label="levelSnd" path="data/sounds/level.ogg" stream="true"
+type="sound" label="gameoverSnd" path="data/sounds/gameover.ogg" stream="true"
+type="sound" label="victorySnd" path="data/sounds/victory.ogg" stream="true"
+
+type="bmfont" label="snap" path="data/fonts/snap.fnt" texture="data/fonts/snap_0.png"
+
+type="ttfont" path="data/fonts/snap.ttf"
+
+
